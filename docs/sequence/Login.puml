@@ -1,0 +1,13 @@
+@startuml
+Client -> Handler: /login | POST \nbody: { \n\temail: string; \n\tpassword: string; \n}
+
+Handler -> Handler: Validate Parameter
+alt Parameter error
+Handler --> Client: return 422: Display parameter errors
+end
+
+
+Handler <-> Database: business logic
+
+Handler --> Client: return 200: Success \n data: { UserData }
+@enduml

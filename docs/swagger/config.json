@@ -1,0 +1,39 @@
+{
+  "name": "MemoApp",
+  "description": "Swagger documentation of memoapp",
+  "version": "2.0.0",
+
+  "contact": {
+    "name": "Jerwyn Rabor",
+    "email": "jerwyn@917ventures.com"
+  },
+
+  "development": "https://memo.api.dev.917v.com.ph",
+
+  "tags": [
+    {
+      "name": "PUBLIC",
+      "description": "Publicly accessible APIs"
+    },
+    {
+      "name": "AUTHENTICATED",
+      "description": "Authenticated APIs"
+    },
+    {
+      "name": "ADMIN",
+      "description": "Admin APIs"
+    }
+  ],
+  "security_schemes": {
+    "authenticated": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    },
+    "admin": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-API-KEY "
+    }
+  }
+}
